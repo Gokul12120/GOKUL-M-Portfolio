@@ -23,7 +23,9 @@ export default function Home() {
               <p className="text-indigo-600 mt-1">{role}</p>
               <p className="mt-4 max-w-xl">{tagline}</p>
               <div className="mt-6 flex gap-3">
-                <Link href="/projects"><a className="px-4 py-2 bg-indigo-600 text-white rounded-md">View Projects</a></Link>
+                <Link href="/projects" className="px-4 py-2 bg-indigo-600 text-white rounded-md">
+  View Projects
+</Link>
                 <a href="#contact" className="px-4 py-2 border rounded-md">Contact</a>
               </div>
             </div>
@@ -58,7 +60,9 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-4">
-              <Link href="/projects"><a className="text-indigo-600">See all projects →</a></Link>
+              <Link href="/projects" className="text-indigo-600">
+  See all projects →
+</Link>
             </div>
           </section>
 
