@@ -46,25 +46,29 @@ export default function Home() {
           </section>
 
           <section className="mt-10">
-            <h3 className="text-xl font-semibold">Featured Projects</h3>
-            <div className="grid md:grid-cols-2 gap-6 mt-4">
-              {projects.slice(0,4).map((p, i) => (
-                <div key={i} className="p-4 border rounded-md">
-                  <h4 className="font-semibold">{p.title}</h4>
-                  <p className="mt-2">{p.description}</p>
-                  <div className="mt-3 flex gap-2">
-                    {p.live && <a href={p.live} className="text-indigo-600">Live</a>}
-                    {p.repo && <a href={p.repo} className="text-indigo-600">Code</a>}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="mt-4">
-              <Link href="/projects" className="text-indigo-600">
-  See all projects →
-</Link>
-            </div>
-          </section>
+  <h3 className="text-xl font-semibold">Featured Projects</h3>
+  <div className="grid md:grid-cols-2 gap-6 mt-4">
+    {projects
+      .filter((p) => p.title !== "DevSecOps Pipeline") // exclude by title
+      .slice(0, 4)
+      .map((p, i) => (
+        <div key={i} className="p-4 border rounded-md">
+          <h4 className="font-semibold">{p.title}</h4>
+          <p className="mt-2">{p.description}</p>
+          <div className="mt-3 flex gap-2">
+            {p.live && <a href={p.live} className="text-indigo-600">Live</a>}
+            {p.repo && <a href={p.repo} className="text-indigo-600">Code</a>}
+          </div>
+        </div>
+      ))}
+  </div>
+  <div className="mt-4">
+    <Link href="/projects" className="text-indigo-600">
+      See all projects →
+    </Link>
+  </div>
+</section>
+
 
           <section id="contact" className="mt-12">
             <h3 className="text-xl font-semibold">Contact</h3>
